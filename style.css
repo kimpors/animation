@@ -1,0 +1,146 @@
+:root {
+  --primary-color: hsl(100, 20%, 80%);
+  --secondary-color: hsl(100, 20%, 30%);
+  --acsent-color: hsl(100, 80%, 80%);
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 20px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+main,
+footer {
+  display: grid;
+}
+
+article {
+  display: flex;
+  height: 10rem;
+  margin: 2.5rem;
+  background-color: var(--secondary-color);
+}
+
+section {
+  width: 100%;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 0.5rem;
+  background-color: var(--acsent-color);
+}
+
+marquee {
+  color: var(--acsent-color);
+  cursor: default;
+  user-select: none;
+  border-inline: 2px solid black;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.rotate {
+  animation: rotate 2s ease-in-out infinite;
+  aspect-ratio: 1;
+}
+
+.slide {
+  animation: slide 4s ease-in-out infinite;
+}
+
+.move {
+  animation: move 4s ease-in-out infinite;
+}
+
+.diagonal {
+  animation: diagonal 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: translate(3%, 8%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+    height: 50%;
+    width: 50%;
+  }
+  25% {
+    transform: translateX(100%);
+    height: 50%;
+    width: 50%;
+  }
+  50% {
+    transform: translate(100%, 100%);
+    height: 50%;
+    width: 50%;
+  }
+  75% {
+    transform: translate(0%, 100%);
+    height: 50%;
+    width: 50%;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    height: 50%;
+    width: 50%;
+  }
+}
+
+@keyframes diagonal {
+  0% {
+    transform: translate(0%, 0%);
+    height: 50%;
+    width: 50%;
+  }
+  25% {
+    transform: translate(100%, 100%);
+    height: 50%;
+    width: 50%;
+  }
+  50% {
+    transform: translate(100%, 0%);
+    height: 50%;
+    width: 50%;
+  }
+  75% {
+    transform: translate(0%, 100%);
+    height: 50%;
+    width: 50%;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    height: 50%;
+    width: 50%;
+  }
+}
